@@ -11,11 +11,12 @@
 
   <tbody>
     <% @airplanes.each do |airplane| %>
-      <tr>
-        <td><%= link_to 'Show', airplane %></td>
+      <li>
+        <b><%=  airplane.name%></b <b> ROW </b><%= airplane.row %><b> COLUMN </b><%= airplane.column %>
+        <!-- <td><%= link_to 'Show', airplane %></td>
         <td><%= link_to 'Edit', edit_airplane_path(airplane) %></td>
-        <td><%= link_to 'Destroy', airplane, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+        <td><%= link_to 'Destroy', airplane, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
+      </li>
     <% end %>
   </tbody>
 </table>

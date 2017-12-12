@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Airplane.destroy_all
 a1 = Airplane.create :name => "emu", :row =>"10", :column =>"3"
 a2 = Airplane.create :name => "dodo", :row =>"40", :column =>"4"
 a3 = Airplane.create :name => "kiwi", :row =>"20", :column =>"6"
@@ -29,7 +30,3 @@ u2 = User.create :name => 'Ellison Onizuka'
 u3 = User.create :name => 'Judith Resnik'
 u4 = User.create :name => 'Ronald McNair'
 u5 = User.create :name => 'Michel Smith'
-
-User.destroy_all
-u1 = User.create :name => "Francis Scobee"
-u2 = User.create :name => "Ellison Onizuka"
