@@ -1,10 +1,10 @@
 Airplane.destroy_all
 
-a1 = Airplane.create :name => "emu", :row => "", :column =>""
-a2 = Airplane.create :name => "dodo", :row => "", :column =>""
-a3 = Airplane.create :name => "kiwi", :row => "", :column =>""
-a4 = Airplane.create :name => "cassowaries", :row => "", :column =>""
-a5 = Airplane.create :name => "penguin", :row => "", :column =>""
+a1 = Airplane.create :name => "emu", :row => "10", :column =>"3"
+a2 = Airplane.create :name => "dodo", :row => "40", :column =>"4"
+a3 = Airplane.create :name => "kiwi", :row => "20", :column =>"6"
+a4 = Airplane.create :name => "cassowaries", :row => "50", :column =>"4"
+a5 = Airplane.create :name => "penguin", :row => "66", :column =>"3"
 
 Flight.destroy_all
 f1 = Flight.create :flight_number => "BCJ100", :origin => "Sydney", :destination => "Hong Kong", :date => ""
