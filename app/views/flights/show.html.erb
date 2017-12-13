@@ -1,4 +1,8 @@
 <p id="notice"><%= notice %></p>
 
+<h1><%= @flight.flight_number  %></h1>
+  <h3>Origin: <%= @flight.origin %></h3>
+  <h3>Destination: <%= @flight.destination %></h3>
+
 <%= link_to 'Edit', edit_flight_path(@flight) %> |
 <%= link_to 'Back', flights_path %>

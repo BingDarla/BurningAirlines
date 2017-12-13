@@ -5,6 +5,7 @@ class FlightsController < ApplicationController
   # GET /flights.json
   def index
     @flights = Flight.all
+
   end
 
   # GET /flights/1
@@ -64,13 +65,17 @@ class FlightsController < ApplicationController
   end
 
   private
+
+    def flight_params
+      params.require(:flight).permit(:flight_number, :origin, :destination)
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_flight
       @flight = Flight.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def flight_params
-      params.fetch(:flight, {})
-    end
+    # def flight_params
+    #   params.fetch(:flight, {})
+    # end
 end

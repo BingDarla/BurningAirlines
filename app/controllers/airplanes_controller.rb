@@ -10,6 +10,7 @@ class AirplanesController < ApplicationController
   # GET /airplanes/1
   # GET /airplanes/1.json
   def show
+    @airplane = Airplane.find params[:id]
   end
 
   # GET /airplanes/new
@@ -19,12 +20,13 @@ class AirplanesController < ApplicationController
 
   # GET /airplanes/1/edit
   def edit
+    @airplane = Airplane.find params[:id]
   end
 
   # POST /airplanes
   # POST /airplanes.json
   def create
-    @airplane = Airplane.new(airplane_params)
+    @airplane = Airplane.new (airplane_params)
 
     respond_to do |format|
       if @airplane.save
@@ -62,13 +64,19 @@ class AirplanesController < ApplicationController
   end
 
   private
+
+
+    def airplane_params
+      params.require(:airplane).permit(:name, :row, :column)
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_airplane
       @airplane = Airplane.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def airplane_params
-      params.fetch(:airplane, {})
-    end
+    # # Never trust parameters from the scary internet, only allow the white list through.
+    # def airplane_params
+    #   params.fetch(:airplane, {})
+    # end
 end

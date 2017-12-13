@@ -1,17 +1,21 @@
-<%= form_with(model: airplane, local: true) do |form| %>
-  <% if airplane.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(airplane.errors.count, "error") %> prohibited this airplane from being saved:</h2>
+<%= form_for @airplane, :class => "form-horizontal" do |f| %>
+<fieldset class="form-group">
+  <%= f.label :name %>
+  <%= f.text_field :name, :class => "form-control"  %>
+</fieldset>
+<fieldset class="form-group">
+  <%= f.label :row %>
+  <%=  f.text_field :row, :class => "form-control" %>
+</fieldset>
+<fieldset class="form-group">
+  <%= f.label :column %>
+  <%= f.text_field :column, :class => "form-control"  %>
+</fieldset>
 
-      <ul>
-      <% airplane.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-    <% end %>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+<fieldset>
+  <label></label>
+  <%= f.submit %>
+</fieldset>
+
 <% end %>
