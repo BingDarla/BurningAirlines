@@ -24,4 +24,8 @@ u3 = User.create :name => 'Judith Resnik'
 u4 = User.create :name => 'Ronald McNair'
 u5 = User.create :name => 'Michel Smith'
 
-a1. flights << f1
+
+a1. flights << f1 << f2
+a2. flights << f3
+a3. flights << f4
+a4. flights << f5
