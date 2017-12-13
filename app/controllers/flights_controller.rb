@@ -5,6 +5,11 @@ class FlightsController < ApplicationController
   # GET /flights.json
   def index
     @flights = Flight.all
+    respond_to do |format|
+        format.html { @flights = Flight.all }
+        format.json { render :json => @flights.to_json(:include => :airplane) }
+    end
+
 
   end
 
@@ -31,7 +36,7 @@ class FlightsController < ApplicationController
 
     respond_to do |format|
       if @flight.save
-        format.html { redirect_to @flight, notice: 'Flight was successfully created.' }
+        format.html { redirect_to flights_path, notice: 'Flight was successfully created.' }
         format.json { render :show, status: :created, location: @flight }
       else
         format.html { render :new }
@@ -45,7 +50,7 @@ class FlightsController < ApplicationController
   def update
     respond_to do |format|
       if @flight.update(flight_params)
-        format.html { redirect_to @flight, notice: 'Flight was successfully updated.' }
+        format.html { redirect_to flights_path, notice: 'Flight was successfully updated.' }
         format.json { render :show, status: :ok, location: @flight }
       else
         format.html { render :edit }
