@@ -37,7 +37,7 @@ u2.reservations << r3
 f3.reservations << r3
 u3.reservations << r4
 f3.reservations << r4
-=======
+
 a1. flights << f1
 a2. flights << f2
 a3. flights << f3

@@ -5,8 +5,25 @@ class ReservationsController < ApplicationController
   # GET /reservations.json
   def index
     @reservations = Reservation.all
+      respond_to do |format|
+          format.html { @reservations = Reservation.all }
+          format.json { render :json => @reservations.to_json(:include => {
+            :flight => @flight,
+            :user => @user
+            }) }
+          # format.json { render :json => @reservations.to_json(:include => :flight ) }
+      end
   end
 
+  #
+  # def index
+  #   @flights = Flight.all
+  #   respond_to do |format|
+  #       format.html { @flights = Flight.all }
+  #       format.json { render :json => @flights.to_json(:include => :airplane) }
+  #   end
+  #
+  #
   # GET /reservations/1
   # GET /reservations/1.json
   def show
