@@ -21,7 +21,13 @@ f3 = Flight.create :flight_number => 'BCJ300', :origin => 'Hong Kong', :destinat
 f4 = Flight.create :flight_number => 'BCJ400', :origin => 'London', :destination => 'Dubai'
 f5 = Flight.create :flight_number => 'BCJ500', :origin => 'Dubai', :destination => 'Lisbon'
 
+# a1.songs << s1
+# a2.songs << s3
+# a3.songs << s2
 
+a1.flights << f1 << f2
+a2.flights << f3 << f4
+a5.flights << f5
 
 
 User.destroy_all
