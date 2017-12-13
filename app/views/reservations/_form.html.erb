@@ -1,17 +1,21 @@
-<%= form_with(model: reservation, local: true) do |form| %>
-  <% if reservation.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(reservation.errors.count, "error") %> prohibited this reservation from being saved:</h2>
 
-      <ul>
-      <% reservation.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+<%= form_for @reservation, :class => "form-horizontal" do |f| %>
+<fieldset class="form-group">
+  <%= f.label :user_id ,:as => "User ID"%>
+  <%= f.text_field :user_id, :class => "form-control"  %>
+</fieldset>
+<fieldset class="form-group">
+  <%= f.label :flight_id, :as =>'Flight ID' %>
+  <%= f.text_field :flight_id, :class => "form-control"  %>
+</fieldset>
+<fieldset class="form-group">
+  <%= f.label :seat_row_col %>
+  <%= f.text_field :seat_row_col, :class => "form-control"  %>
+</fieldset>
+
+  <label></label>
+  <%= f.submit %>
+</fieldset>
+
 <% end %>

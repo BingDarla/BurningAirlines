@@ -22,6 +22,7 @@ u3 = User.create :name => 'Judith Resnik'
 u4 = User.create :name => 'Ronald McNair'
 u5 = User.create :name => 'Michel Smith'
 
+
 Reservation.destroy_all
 r1 = Reservation.create :seat_row_col => '13'
 r2 = Reservation.create :seat_row_col => '14'
@@ -36,3 +37,9 @@ u2.reservations << r3
 f3.reservations << r3
 u3.reservations << r4
 f3.reservations << r4
+
+a1. flights << f1
+a2. flights << f2
+a3. flights << f3
+a4. flights << f4
+a5. flights << f5
