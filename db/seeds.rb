@@ -1,18 +1,10 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+
 Airplane.destroy_all
 a1 = Airplane.create :name => "emu", :row =>"10", :column =>"3"
 a2 = Airplane.create :name => "dodo", :row =>"40", :column =>"4"
 a3 = Airplane.create :name => "kiwi", :row =>"20", :column =>"6"
 a4 = Airplane.create :name => "cassowaries", :row =>"10", :column =>"4"
 a5 = Airplane.create :name => "penguin", :row =>"66", :column =>"3"
-
-
 
 Flight.destroy_all
 f1 = Flight.create :flight_number => 'BCJ100', :origin => 'Sydney', :destination => 'Hong Kong'
@@ -23,11 +15,6 @@ f5 = Flight.create :flight_number => 'BCJ500', :origin => 'Dubai', :destination 
 
 
 
-a1.flights << f1 << f2
-a2.flights << f3 << f4
-a5.flights << f5
-
-
 User.destroy_all
 u1 = User.create :name => 'Francis Scobee'
 u2 = User.create :name => 'Ellison Onizuka'
@@ -35,6 +22,7 @@ u3 = User.create :name => 'Judith Resnik'
 u4 = User.create :name => 'Ronald McNair'
 u5 = User.create :name => 'Michel Smith'
 
+<<<<<<< HEAD
 Reservation.destroy_all
 r1 = Reservation.create :seat_row_col => '13'
 r2 = Reservation.create :seat_row_col => '14'
@@ -49,3 +37,6 @@ u2.reservations << r3
 f3.reservations << r3
 u3.reservations << r4
 f3.reservations << r4
+=======
+a1. flights << f1
+>>>>>>> f4eb558e699fc4545e663baa958d70cf8f6362cf

@@ -1,4 +1,9 @@
 <p id="notice"><%= notice %></p>
 
+<h1><%= @airplane.name  %></h1>
+<h3>Row: <%= @airplane.row %></h3>
+<h3>Column: <%= @airplane.column %></h3>
+
+
 <%= link_to 'Edit', edit_airplane_path(@airplane) %> |
 <%= link_to 'Back', airplanes_path %>
