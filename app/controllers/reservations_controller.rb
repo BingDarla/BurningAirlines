@@ -63,12 +63,16 @@ class ReservationsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
+    def reservation_params
+      params.require(:reservation).permit(:seat_row_col)
+    end
+
     def set_reservation
       @reservation = Reservation.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def reservation_params
-      params.fetch(:reservation, {})
-    end
+    # def reservation_params
+    #   params.fetch(:reservation, {})
+    # end
 end
