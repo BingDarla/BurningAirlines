@@ -37,10 +37,16 @@ h3{
 .form-group{
   color: white;
 }
-a {
+td.a {
+  text-decoration: none;
+  text-transform: uppercase;
+  list-style-type: none;
   color: white;
 }
 
-li {
+td {
   color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  list-style-type: none;
 }
