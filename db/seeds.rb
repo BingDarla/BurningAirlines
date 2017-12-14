@@ -8,7 +8,7 @@ a5 = Airplane.create :name => "penguin", :row =>"66", :column =>"3"
 
 Flight.destroy_all
 f1 = Flight.create :flight_number => 'BCJ100', :origin => 'Sydney', :destination => 'Hong Kong'
-f2 = Flight.create :flight_number => 'BCJ200', :origin => 'Melbourne', :destination => 'Ho Chi Minh Cityg'
+f2 = Flight.create :flight_number => 'BCJ200', :origin => 'Melbourne', :destination => 'Ho Chi Minh City'
 f3 = Flight.create :flight_number => 'BCJ300', :origin => 'Hong Kong', :destination => 'London'
 f4 = Flight.create :flight_number => 'BCJ400', :origin => 'London', :destination => 'Dubai'
 f5 = Flight.create :flight_number => 'BCJ500', :origin => 'Dubai', :destination => 'Lisbon'
