@@ -6,7 +6,7 @@ class ReservationsController < ApplicationController
   def index
     @reservations = Reservation.all
       respond_to do |format|
-          format.html { @reservations = Reservation.all }
+          format.html { @reservations = User.first.reservations }
           format.json { render :json => User.first.reservations.to_json(:include => {
             :flight => @flight,
             :user => @user
