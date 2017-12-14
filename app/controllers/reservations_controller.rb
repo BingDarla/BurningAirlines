@@ -7,7 +7,7 @@ class ReservationsController < ApplicationController
     @reservations = Reservation.all
       respond_to do |format|
           format.html { @reservations = Reservation.all }
-          format.json { render :json => @reservations.to_json(:include => {
+          format.json { render :json => User.first.reservations.to_json(:include => {
             :flight => @flight,
             :user => @user
             }) }
