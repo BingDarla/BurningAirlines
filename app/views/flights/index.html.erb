@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Flights</h1>
+<h1>Flights Information</h1>
 
 <table>
   <thead>
@@ -10,11 +10,17 @@
   </thead>
 
   <tbody>
+    <tr>
+      <td><b> ORIGIN </b></td><td><b> DESTINATION </b></td><td> <b>FLIGHT NO </b></td>
+    </tr>
+    <li ></li>
+
     <% @flights.each do |flight| %>
-
-    <li><b>FLIGHT NO </b><%= flight.flight_number%>  <b> ORIGIN </b> <%= flight.origin %> <b> DESTINATION </b> <%= flight.destination %><%= link_to ' Show ', flight %> <%= link_to 'Edit ', edit_flight_path(flight) %> <%= link_to 'Destroy' , flight, method: :delete, data: { confirm: 'Are you sure?' } %></li>
-
+      <tr>
+     <td><%= flight.origin %></td><td><%= flight.destination %></td><td><%= flight.flight_number %></td><td><%= link_to 'SHOW',flight %></td><td> <%= link_to 'EDIT', edit_flight_path(flight) %></td><td><%= link_to 'Destroy', flight, method: :delete, data:{comfirm:'Are you sure?'} %></td>
+      </tr>
     <% end %>
+
   </tbody>
 </table>
 

@@ -10,13 +10,15 @@
   </thead>
 
   <tbody>
-    <% @reservations.each do |reservation| %>
       <tr>
-        <td>User: <%=reservation.user.name %></td>
-        <td>User ID: <%=reservation.user_id %></td>
-        <td>Flight Number: <%=reservation.flight.flight_number %></td>
-        <td>Flight ID: <%=reservation.flight_id%></td>
-        <td>Seat Number: <%=reservation.seat_row_col  %></td>
+        <td>User Name:</td><td>Flight Number:</td><td>Airplane</td><td>Seat Number</td>
+      </tr>
+    <% @reservations.each do |reservation| %>
+
+        <td><%=reservation.user.name %></td>
+        <td><%=reservation.flight.flight_number %></td>
+        <td><%=reservation.flight.airplane.name%></td>
+        <td><%=reservation.seat_row_col  %></td>
         <td><%= link_to 'Show', reservation %></td>
         <td><%= link_to 'Edit', edit_reservation_path(reservation) %></td>
         <td><%= link_to 'Destroy', reservation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
